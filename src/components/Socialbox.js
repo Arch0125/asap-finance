@@ -13,7 +13,7 @@ const Socialbox = () => {
 
     const[socialinks, setsocialinks] = React.useState([]);
     
-    const socialcontract = new ethers.Contract('0xCE4f1F0b509c13332142E0404b2BE548BA3f5f98', Socialabi.abi, signer);
+    const socialcontract = new ethers.Contract('0x21B108Ade4725635bfc52574251efB941Bd5b575', Socialabi.abi, signer);
 
     const getsocials = async () => {
         const tx = await socialcontract.getSocials(userId);
@@ -22,7 +22,6 @@ const Socialbox = () => {
 
     useEffect(() => {
         getsocials();
-        console.log(socialinks);
     })
 
     return ( 

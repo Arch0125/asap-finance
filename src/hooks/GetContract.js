@@ -5,7 +5,7 @@ function GetContract(addr,abi) {
  const { data: signer, isError, isLoading } = useSigner()
 
  const contract = useContract({
- address: '0x3922Ee5f7D47285Fe575DD8073FaeCed6A87f326',
+ address: '0x94F63346D2173e341F5804d9d281b1263b51028f',
  abi: Idenabi.abi,
  signerOrProvider: signer,
  })

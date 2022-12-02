@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useAccount } from "wagmi";
 import { useState } from "react";
 import Socialbox from "./components/Socialbox";
+import SmartWallet from "./components/SmartWallet";
 
 function Homepage() {
   const params = useParams();
@@ -19,7 +20,7 @@ function Homepage() {
   const [approved, setapproved] = useState(false);
 
   const idencontract = new ethers.Contract(
-    "0x3922Ee5f7D47285Fe575DD8073FaeCed6A87f326",
+    "0x94F63346D2173e341F5804d9d281b1263b51028f",
     Idenabi.abi,
     signer
   );
@@ -53,6 +54,7 @@ function Homepage() {
               <Listbox />
               <Socialbox />
             </div>
+              <SmartWallet/>
           </div>
           <div className="flex p-4  flex-col  justify-center content-center  items-center ">
             <div className="bg-blue-300 rounded-full w-40 h-40"> </div>
