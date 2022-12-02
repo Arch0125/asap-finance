@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.shadow-solid{
+  box-shadow: 10px 10px rgb(18, 18, 18)
+}
+
+.shadow-solid-s{
+  box-shadow: 5px 5px rgb(18, 18, 18)
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap');
