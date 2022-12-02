@@ -16,7 +16,7 @@ const Listbox = () => {
 
     const getaddrs = async () => {
         const ethaadr = await idencontract.getAddress(userId,'homestead');
-        const polygonaddr = await idencontract.getAddress(userId,'maticmum');
+        const polygonaddr = await idencontract.getAddress(userId,'matic');
         setethaddress(ethaadr);
         setpolygonaddress(polygonaddr);
         console.log(polygonaddr);
