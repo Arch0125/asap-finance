@@ -19,15 +19,12 @@ const Listbox = () => {
         const polygonaddr = await idencontract.getAddress(userId,'matic');
         setethaddress(ethaadr);
         setpolygonaddress(polygonaddr);
-        console.log(polygonaddr);
+        console.log('Address',polygonaddr);
     }
 
     React.useEffect(() => {
         getaddrs();
     },[])
-
-    console.log(polygonaddress);
-
 
     return ( 
         <div className='flex flex-col border-2 border-black h-fit w-[30%] justify-between '>

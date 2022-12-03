@@ -8,6 +8,7 @@ import { useAccount } from "wagmi";
 import { useState } from "react";
 import Socialbox from "./components/Socialbox";
 import SmartWallet from "./components/SmartWallet";
+import Ens from "./components/Ens";
 
 function Homepage() {
   const params = useParams();
@@ -52,6 +53,7 @@ function Homepage() {
             </p>
             <div className="flex flex-row mt-4 w-full justify-between ">
               <Listbox />
+              <Ens/>
               <Socialbox />
             </div>
               <SmartWallet/>
