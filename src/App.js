@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Uploader from './components/Uploader';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             <p className='text-md font-bold' >Gas Refill</p>
             <p className='text-md'>Get tokens to pay for your gas in exchange</p>
           </div>
+
         </div>
       </div>
     </div>
