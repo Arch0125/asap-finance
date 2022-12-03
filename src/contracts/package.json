@@ -3,5 +3,8 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
     "hardhat": "^2.12.2"
+  },
+  "dependencies": {
+    "@routerprotocol/router-js-sdk": "^0.1.5"
   }
 }
