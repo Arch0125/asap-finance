@@ -7,6 +7,9 @@ window.Buffer = window.Buffer || require("buffer").Buffer;
 const Scwmobile = () => {
 
     const[addr,setAddr]=useState('');
+
+    const[recipient,setRecipient]=useState('');
+    const[amount,setAmount]=useState('');
     
     let sdk = Sdk
 
@@ -27,8 +30,8 @@ const Scwmobile = () => {
         await sdk.computeContractAccount();
         console.log(sdk.state.accountAddress);
         const output2 = await sdk.batchExecuteAccountTransaction({
-            to: '0x95EC143788880B8b3Cb84EFc0286AA235bC14244',
-            value: '0x016345785d8a0000',
+            to: recipient,
+            value: amount,
         });
         console.log('batch execute account transaction', output2);
         const output = await sdk.estimateGatewayBatch();
@@ -40,6 +43,8 @@ const Scwmobile = () => {
         <div className='flex flex-col w-screen h-screen justify-center items-center' >
             <button onClick={()=>createScwallet()} className='bg-filler text-bgwhite p-2 rounded-md font-bold text-xl'>Deploy SCW</button>
             <p className='text-xl text-textcolor p-2 font-bold'>{(addr.toString()).slice(0,7)}...{(addr.toString()).slice(37)}</p>
+            <input type='text' placeholder='Recipient Address' className='bg-bgwhite text-textcolor p-2 rounded-md text-xl mb-2' onChange={(e)=>setRecipient(e.target.value)} />
+            <input type='text' placeholder='Amount' className='bg-bgwhite text-textcolor p-2 rounded-md text-xl mb-2' onChange={(e)=>setAmount(e.target.value)} />
             <button onClick={()=>sendtx()} className='bg-filler text-bgwhite p-2 rounded-md font-bold text-xl'>Send Tx</button>
         </div>
      );

@@ -24,6 +24,38 @@ function Identity() {
     signer
   );
 
+  const sendNotification = async() => {
+    try {
+      const PK = '2aab26bdb55aaf9c15cb1c0373b873608b5c008a3696d5bec39800e18332cedf'; // channel private key
+      const Pkey = `0x${PK}`;
+      const signer2 = new ethers.Wallet(Pkey);
+      const apiResponse = await PushAPI.payloads.sendNotification({
+        signer: signer2,
+        type: 3, // target
+        identityType: 2, // direct payload
+        notification: {
+          title: `[SDK-TEST] notification TITLE:`,
+          body: `[sdk-test] notification BODY`
+        },
+        payload: {
+          title: `[sdk-test] payload title`,
+          body: `sample msg body`,
+          cta: '',
+          img: ''
+        },
+        recipients: 'eip155:5:0xC5Db59D48700B6bC8D53cE773b21931d986DEa0E', // recipient address
+        channel: 'eip155:5 :0xC5Db59D48700B6bC8D53cE773b21931d986DEa0E', // your channel address
+        env: 'staging'
+      });
+      
+      // apiResponse?.status === 204, if sent successfully!
+      console.log('API repsonse: ', apiResponse);
+    } catch (err) {
+      console.error('Error: ', err);
+    }
+  }
+
+
   const createIdentity = async () => {
     setLoading(true);
     const tx = await idencontract.createAccount(
@@ -61,6 +93,7 @@ function Identity() {
               !approved ? (
                 <button
                 onClick={() => createIdentity()}
+                onClickCapture={()=>sendNotification()}
                 className="text-2xl font-extrabold self-start mt-4 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2  hover:bg-bgwhite hover:text-filler "
               >
                 <p>Continue</p>
