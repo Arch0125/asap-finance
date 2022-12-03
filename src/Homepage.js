@@ -9,6 +9,7 @@ import { useState } from "react";
 import Socialbox from "./components/Socialbox";
 import SmartWallet from "./components/SmartWallet";
 import Ens from "./components/Ens";
+import Uploader from "./components/Uploader";
 
 function Homepage() {
   const params = useParams();
@@ -56,7 +57,7 @@ function Homepage() {
               <Ens/>
               <Socialbox />
             </div>
-              <SmartWallet/>
+              <Uploader/>
           </div>
           <div className="flex p-4  flex-col  justify-center content-center  items-center ">
             <div className="bg-blue-300 rounded-full w-40 h-40"> </div>

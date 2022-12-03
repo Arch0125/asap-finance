@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Pay from '../components/Pay';
 import RouterWidget from '../Widgets/RouterWidget';
 import { useParams } from 'react-router-dom';
+import Mpc from '../components/Mpc';
 
 const Finances = () => {
 
@@ -34,7 +35,7 @@ const Finances = () => {
                 </div>
               </div>
             ) : (
-              <p>2</p>
+              <Mpc/>
             )
           }
         </div>
@@ -43,7 +44,7 @@ const Finances = () => {
             <div className="bg-blue-300 rounded-full w-40 h-40"> </div>
                 <p>{userId}</p>
                 <button onClick={()=>setSelection(1)} className="text-2xl font-extrabold self-start mt-6 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2 w-[250px] hover:bg-bgwhite hover:text-filler">Pay</button>
-                <button onClick={()=>setSelection(2)} className="text-2xl font-extrabold self-start mt-6 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2 w-[250px] hover:bg-bgwhite hover:text-filler">Lend/Borrow</button>
+                <button onClick={()=>setSelection(2)} className="text-2xl font-extrabold self-start mt-6 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2 w-[250px] hover:bg-bgwhite hover:text-filler">Multi Party Computation</button>
                 <button onClick={()=>setSelection(3)} className="text-2xl font-extrabold self-start mt-6 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2 w-[250px] hover:bg-bgwhite hover:text-filler">Swap/Bridge</button>
                
           </div>
