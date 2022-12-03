@@ -25,9 +25,7 @@ const Ens = () => {
         console.log(polygonaddr);
     }
 
-    React.useEffect(() => {
-        getaddrs();
-    },[])
+
 
 
     const config = {
@@ -55,14 +53,15 @@ const Ens = () => {
 
 
     useEffect(() => {
+        getaddrs();
         getens();
         console.log(ens);
-    })
+    },[])
 
     return ( 
         <div className='flex flex-col border-2 border-black h-fit w-[30%] justify-between '>
             <div className='flex flex-col justify-between items-center bg-filler w-full'>
-                <p className='text-xl text-bgwhite p-2 font-bold'>ENS Handles</p>
+                <p className='text-xl text-bgwhite p-2 font-bold'><button onClick={()=>getens()} >ENS Handles</button></p>
             </div>
             <div className='flex flex-col justify-between items-center w-full h-fit'>
                 {
