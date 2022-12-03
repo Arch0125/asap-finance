@@ -25,7 +25,7 @@ const PayReq = () => {
     const confirm = async()=>{
         var addr = await idencontract.getAddress(profileid.toString(),'matic');
         console.log(addr)
-        setAddr(addr);
+        setAddr(addr[0]);
     }
 
     const sendReq = async()=>{
