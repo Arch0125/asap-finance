@@ -12,12 +12,13 @@ import { WorldIDWidget } from "@worldcoin/id";
 function Identity() {
   const [uid, setuid] = useState();
   const [loading, setLoading] = useState(false);
+  const [approved, setapproved] = useState(false);
 
   const { data: signer, isError, isLoading } = useSigner();
   const { address } = useAccount();
 
   const idencontract = new ethers.Contract(
-    "0x157ae817FCAd5a0d07E0Cc4BDcAC6dd525a1bef1",
+    "0xF88FCdef5A9662087d6b596766f9dcD890C94B29",
     Idenabi.abi,
     signer
   );
@@ -32,6 +33,7 @@ function Identity() {
     await tx.wait();
     console.log(tx);
     setLoading(false);
+    setapproved(true);
   };
 
   return (
@@ -54,13 +56,25 @@ function Identity() {
             placeholder="Enter your favourite username"
           />
           {!loading ? (
-            <>
-              <button
+            <>{
+              !approved ? (
+                <button
                 onClick={() => createIdentity()}
                 className="text-2xl font-extrabold self-start mt-4 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2  hover:bg-bgwhite hover:text-filler "
               >
                 <p>Continue</p>
               </button>
+              ):(
+                <a href={`/homepage/${uid}`} >
+                <button
+                
+                className="text-2xl font-extrabold self-start mt-4 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2  hover:bg-bgwhite hover:text-filler "
+              >
+                <p>Go to dashboard</p>
+              </button></a>
+              )
+            }
+              
               <WorldIDWidget
                 actionId="wid_BPZsRJANxct2cZxVRyh80SFG" // obtain this from developer.worldcoin.org
                 signal="my_signal"

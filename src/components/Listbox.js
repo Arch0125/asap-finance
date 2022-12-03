@@ -9,7 +9,7 @@ const Listbox = () => {
     const{data: signer } = useSigner();
     const params = useParams();
     var userId = params.userId;
-    const idencontract = new ethers.Contract('0x157ae817FCAd5a0d07E0Cc4BDcAC6dd525a1bef1', Idenabi.abi, signer);
+    const idencontract = new ethers.Contract('0xF88FCdef5A9662087d6b596766f9dcD890C94B29', Idenabi.abi, signer);
     const[ethaddress, setethaddress] = React.useState([]);
     const[bscaddress, setbscaddress] = React.useState([]);
     const[polygonaddress, setpolygonaddress] = React.useState([]);
@@ -35,7 +35,6 @@ const Listbox = () => {
                 <p className='text-xl text-bgwhite p-2 font-bold'>Wallet Addresses</p>
             </div>
             <div className='flex flex-col justify-between items-center w-full h-fit'>
-                {/* <p className='text-xl text-textcolor p-2 font-bold'>Ethereum</p> */}
                 {
                     polygonaddress.map((item) => {
                         return(

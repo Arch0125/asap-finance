@@ -20,36 +20,32 @@ const Pay = () => {
     const { data: signer } = useSigner();
 
     const reqcontract = new ethers.Contract('0x06075abF9F473a679b9D5e4B2a5bc72357f7cfa1', Reqabi.abi, signer);
-    const idencontract = new ethers.Contract('0x157ae817FCAd5a0d07E0Cc4BDcAC6dd525a1bef1', Idenabi.abi, signer);
+    const idencontract = new ethers.Contract('0xF88FCdef5A9662087d6b596766f9dcD890C94B29', Idenabi.abi, signer);
+    const[ethaddress, setethaddress] = React.useState([]);
+    const[bscaddress, setbscaddress] = React.useState([]);
+    const[polygonaddress, setpolygonaddress] = React.useState([]);
 
-    const getReqs = async()=>{
-        var count = await reqcontract.getid();
-        console.log(count);
+    const getaddrs = async () => {
+        const ethaadr = await idencontract.getAddress(userId,'homestead');
+        const polygonaddr = await idencontract.getAddress(userId,'matic');
+        setethaddress(ethaadr);
+        setpolygonaddress(polygonaddr);
+        console.log(polygonaddr);
     }
-
-    useEffect(()=>{
-        getReqs();
-    })
 
 
     return ( 
-        <div className='flex flex-col border-2 border-black h-fit w-[45%] justify-between '>
-        <div className='flex flex-col justify-between items-center bg-filler w-full'>
-            <p className='text-xl text-bgwhite p-2 font-bold'>Pay</p>
-        </div>
-        <div className='flex flex-col justify-between items-center w-full h-fit'>
-            <input onChange={(e)=>setProfileid(e.target.value)} type='text' className='border-2 border-black w-[80%] h-10 mt-4' placeholder='Profile ID' />
-            <select className='flex flex-col w-[80%] mt-4' onClick={(e)=>setChain(e.target.value)} >
-                <option value='homestead'>Ethereum</option>
-                <option value='matic'>Polygon</option>
-            </select>
-            <input onChange={(e)=>setAmount(e.target.value)} type='text' className='border-2 border-black w-[80%] h-10 mt-4 mb-4' placeholder='Amount' />
-            <p className='text-md text-textcolor py-2 font-semibold'>{(addr.toString()).slice(0,7)}...{(addr.toString()).slice(37)}</p>
-            <button className='bg-filler text-bgwhite w-[80%] h-10 mt-4 mb-2' >Confirm</button>
-            <button className='bg-filler text-bgwhite w-[80%] h-10 mt-2 mb-4' >Send Request</button>
+         <div className='flex flex-col bg-white w-screen h-screen justify-center items-center font-mono text-textcolor' >
+            <div className='flex flex-row w-[80%] h-[80%] bg-bgwhite border-4 border-black shadow-solid ' >
+                <div className='flex flex-col w-[70%] h-full p-14 border-r-4 border-black'>
+                    <p className='text-4xl font-bold'>Pay {userId}</p>
+                    <button className='mt-5 bg-filler text-bgwhite w-[40%] h-fit text-xl' onClick={()=>getaddrs()}>Get Addresses</button>
+                </div>
+                <div className='flex flex-col w-[30%] h-full p-14 border-r-4 border-black'>
 
+                </div>
+            </div>
         </div>
-    </div>
      );
 }
  

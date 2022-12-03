@@ -18,7 +18,7 @@ const AddAddr = () => {
     const[addr,setAddr]=useState("");
 
     const idencontract = new ethers.Contract(
-        "0x157ae817FCAd5a0d07E0Cc4BDcAC6dd525a1bef1",
+        "0xF88FCdef5A9662087d6b596766f9dcD890C94B29",
         Idenabi.abi,
         signer
     );
