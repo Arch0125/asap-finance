@@ -53,7 +53,7 @@ root.render(
                 <Route path="/" element={<App/>} />
                 <Route path='/identity' element={<Identity/>}/>
                 <Route path="/Homepage/:userId" element={<Homepage />} />     
-                <Route path="/finances" element={<Finances/>}/>  
+                <Route path="/finances/:userId" element={<Finances/>}/>  
             </Routes>
        </Router> 
     </RainbowKitProvider>
