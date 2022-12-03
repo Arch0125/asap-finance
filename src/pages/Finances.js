@@ -2,6 +2,7 @@ import React from 'react';
 import { Sdk, MetaMaskWalletProvider } from 'etherspot';
 import PayReq from '../components/PayReq';
 import { useState } from 'react';
+import Pay from '../components/Pay';
 
 const Finances = () => {
 
@@ -12,7 +13,7 @@ const Finances = () => {
       <div className="flex flex-row w-[80%] h-[80%] bg-bgwhite border-4 border-black shadow-solid ">
         <div className="flex flex-col w-[70%] h-full p-14 border-r-4 border-black">
           {
-            selection == '1' ? <PayReq/> : <p>2</p>
+            selection == '1' ?<div className='flex flex-row w-full justify-between' > <PayReq/> <Pay/> </div> : <p>2</p>
           }
         </div>
         <div className="flex flex-col w-[30%] h-full justify-center items-center">

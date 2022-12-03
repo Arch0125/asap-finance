@@ -8,7 +8,7 @@ import { useSigner } from 'wagmi';
 
 
 
-const PayReq = () => {
+const Pay = () => {
     
     const params = useParams();
     var userId = params.userId;
@@ -38,7 +38,7 @@ const PayReq = () => {
     return ( 
         <div className='flex flex-col border-2 border-black h-fit w-[45%] justify-between '>
         <div className='flex flex-col justify-between items-center bg-filler w-full'>
-            <p className='text-xl text-bgwhite p-2 font-bold'>Request Payment</p>
+            <p className='text-xl text-bgwhite p-2 font-bold'>Pay</p>
         </div>
         <div className='flex flex-col justify-between items-center w-full h-fit'>
             <input onChange={(e)=>setProfileid(e.target.value)} type='text' className='border-2 border-black w-[80%] h-10 mt-4' placeholder='Profile ID' />
@@ -56,4 +56,4 @@ const PayReq = () => {
      );
 }
  
-export default PayReq;
+export default Pay;
