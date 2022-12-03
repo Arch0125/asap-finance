@@ -17,7 +17,7 @@ function Identity() {
   const { address } = useAccount();
 
   const idencontract = new ethers.Contract(
-    "0x94F63346D2173e341F5804d9d281b1263b51028f",
+    "0x157ae817FCAd5a0d07E0Cc4BDcAC6dd525a1bef1",
     Idenabi.abi,
     signer
   );

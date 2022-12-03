@@ -20,7 +20,7 @@ function Homepage() {
   const [approved, setapproved] = useState(false);
 
   const idencontract = new ethers.Contract(
-    "0x94F63346D2173e341F5804d9d281b1263b51028f",
+    "0x157ae817FCAd5a0d07E0Cc4BDcAC6dd525a1bef1",
     Idenabi.abi,
     signer
   );
@@ -59,18 +59,6 @@ function Homepage() {
           <div className="flex p-4  flex-col  justify-center content-center  items-center ">
             <div className="bg-blue-300 rounded-full w-40 h-40"> </div>
             <p className="text-2xl font-bold mt-4"> {onchainid} </p>
-            <input
-              className="w-64 mt-4  h-12 border-2 border-black rounded-md p-2"
-              placeholder="eth"
-            />
-            <input
-              className="w-64 mt-4 h-12 border-2 border-black rounded-md p-2"
-              placeholder="polygon"
-            />
-            <input
-              className="w-64 mt-4 h-12 border-2 border-black rounded-md p-2"
-              placeholder="bsc"
-            />
           </div>
         </div>
         <a href="/finances">

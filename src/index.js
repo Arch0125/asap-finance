@@ -21,6 +21,7 @@ import { publicProvider } from 'wagmi/providers/public';
 import Login from './pages/Login';
 import Identity from './pages/Identity';
 import Finances from './pages/Finances';
+import AddAddr from './components/AddAddr';
 const { chains, provider } = configureChains(
   [chain.polygon, chain.polygonMumbai],
   [
@@ -54,6 +55,7 @@ root.render(
                 <Route path='/identity' element={<Identity/>}/>
                 <Route path="/Homepage/:userId" element={<Homepage />} />     
                 <Route path="/finances/:userId" element={<Finances/>}/>  
+                <Route path='/addaddress/:userId' element={<AddAddr/>} />
             </Routes>
        </Router> 
     </RainbowKitProvider>

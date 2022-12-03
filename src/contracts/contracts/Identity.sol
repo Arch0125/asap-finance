@@ -24,6 +24,7 @@ contract Identity{
 
     function addAddress(string memory _name, string memory _address, string memory chain ) public {
         profiles[_name].addrs[chain].push(_address);
+        profileids[_address]=_name;
         emit AddressRegistered(_address);
     }
 

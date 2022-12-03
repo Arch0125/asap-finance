@@ -9,7 +9,7 @@ const Listbox = () => {
     const{data: signer } = useSigner();
     const params = useParams();
     var userId = params.userId;
-    const idencontract = new ethers.Contract('0x94F63346D2173e341F5804d9d281b1263b51028f', Idenabi.abi, signer);
+    const idencontract = new ethers.Contract('0x157ae817FCAd5a0d07E0Cc4BDcAC6dd525a1bef1', Idenabi.abi, signer);
     const[ethaddress, setethaddress] = React.useState([]);
     const[bscaddress, setbscaddress] = React.useState([]);
     const[polygonaddress, setpolygonaddress] = React.useState([]);
@@ -46,6 +46,9 @@ const Listbox = () => {
                         )
                     })
                 }
+            </div>
+            <div className='flex flex-col justify-between items-center bg-filler w-full'>
+                <button className='text-xl text-bgwhite p-2 font-bold'>Add Address </button>
             </div>
         </div>
      );

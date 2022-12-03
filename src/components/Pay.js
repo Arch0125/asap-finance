@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import Reqabi from '../contracts/artifacts/contracts/Requests.sol/Requests.json';
 import Idenabi from '../contracts/artifacts/contracts/Identity.sol/Identity.json';
@@ -20,19 +20,16 @@ const Pay = () => {
     const { data: signer } = useSigner();
 
     const reqcontract = new ethers.Contract('0x06075abF9F473a679b9D5e4B2a5bc72357f7cfa1', Reqabi.abi, signer);
-    const idencontract = new ethers.Contract('0x94F63346D2173e341F5804d9d281b1263b51028f', Idenabi.abi, signer);
+    const idencontract = new ethers.Contract('0x157ae817FCAd5a0d07E0Cc4BDcAC6dd525a1bef1', Idenabi.abi, signer);
 
-    const confirm = async()=>{
-        var addr = await idencontract.getAddress(profileid.toString(),'matic');
-        console.log(addr)
-        setAddr(addr);
+    const getReqs = async()=>{
+        var count = await reqcontract.getid();
+        console.log(count);
     }
 
-    const sendReq = async()=>{
-        const tx = await reqcontract.createReqs(profileid.toString(),chain.toString(),amount.toString(),signer._address);
-        await tx.wait();
-        console.log(tx);
-    }
+    useEffect(()=>{
+        getReqs();
+    })
 
 
     return ( 
@@ -48,8 +45,8 @@ const Pay = () => {
             </select>
             <input onChange={(e)=>setAmount(e.target.value)} type='text' className='border-2 border-black w-[80%] h-10 mt-4 mb-4' placeholder='Amount' />
             <p className='text-md text-textcolor py-2 font-semibold'>{(addr.toString()).slice(0,7)}...{(addr.toString()).slice(37)}</p>
-            <button className='bg-filler text-bgwhite w-[80%] h-10 mt-4 mb-2' onClick={()=>confirm()}>Confirm</button>
-            <button className='bg-filler text-bgwhite w-[80%] h-10 mt-2 mb-4' onClick={()=>sendReq()}>Send Request</button>
+            <button className='bg-filler text-bgwhite w-[80%] h-10 mt-4 mb-2' >Confirm</button>
+            <button className='bg-filler text-bgwhite w-[80%] h-10 mt-2 mb-4' >Send Request</button>
 
         </div>
     </div>
