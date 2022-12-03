@@ -4,8 +4,12 @@ import PayReq from '../components/PayReq';
 import { useState } from 'react';
 import Pay from '../components/Pay';
 import RouterWidget from '../Widgets/RouterWidget';
+import { useParams } from 'react-router-dom';
 
 const Finances = () => {
+
+    const params=useParams();
+    const userId = params.userId;
 
   const[selection,setSelection]=useState('1')
 
@@ -37,7 +41,7 @@ const Finances = () => {
         <div className="flex flex-col w-[30%] h-full justify-center items-center">
           <div className="flex p-4  flex-col  justify-center content-center  items-center ">
             <div className="bg-blue-300 rounded-full w-40 h-40"> </div>
-                <p>0xankush</p>
+                <p>{userId}</p>
                 <button onClick={()=>setSelection(1)} className="text-2xl font-extrabold self-start mt-6 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2 w-[250px] hover:bg-bgwhite hover:text-filler">Pay</button>
                 <button onClick={()=>setSelection(2)} className="text-2xl font-extrabold self-start mt-6 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2 w-[250px] hover:bg-bgwhite hover:text-filler">Lend/Borrow</button>
                 <button onClick={()=>setSelection(3)} className="text-2xl font-extrabold self-start mt-6 bg-filler text-bgwhite border-4 border-black shadow-solid px-4 py-2 w-[250px] hover:bg-bgwhite hover:text-filler">Swap/Bridge</button>

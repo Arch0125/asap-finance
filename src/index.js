@@ -23,6 +23,7 @@ import Identity from './pages/Identity';
 import Finances from './pages/Finances';
 import AddAddr from './components/AddAddr';
 import Pay from './components/Pay';
+import Scwmobile from './pages/Scwmobile';
 const { chains, provider } = configureChains(
   [chain.polygon, chain.polygonMumbai],
   [
@@ -58,6 +59,7 @@ root.render(
                 <Route path="/finances/:userId" element={<Finances/>}/>  
                 <Route path='/addaddress/:userId' element={<AddAddr/>} />
                 <Route path='/pay/:userId' element={<Pay/>}/>
+                <Route path='/mscw' element={<Scwmobile/>} />
             </Routes>
        </Router> 
     </RainbowKitProvider>
