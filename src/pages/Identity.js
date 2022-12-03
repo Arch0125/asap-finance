@@ -8,6 +8,7 @@ import { useSigner } from "wagmi";
 import { useEffect } from "react";
 import { ethers } from "ethers";
 import { WorldIDWidget } from "@worldcoin/id";
+import * as PushAPI from "@pushprotocol/restapi";
 
 function Identity() {
   const [uid, setuid] = useState();
