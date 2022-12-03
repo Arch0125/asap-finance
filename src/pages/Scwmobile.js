@@ -1,6 +1,8 @@
 import React from 'react';
 import { Sdk, NetworkNames } from 'etherspot';
 import { useState } from 'react';
+window.Buffer = window.Buffer || require("buffer").Buffer; 
+
 
 const Scwmobile = () => {
 
@@ -25,7 +27,7 @@ const Scwmobile = () => {
         await sdk.computeContractAccount();
         console.log(sdk.state.accountAddress);
         const output2 = await sdk.batchExecuteAccountTransaction({
-            to: '0xC5Db59D48700B6bC8D53cE773b21931d986DEa0E',
+            to: '0x95EC143788880B8b3Cb84EFc0286AA235bC14244',
             value: '0x016345785d8a0000',
         });
         console.log('batch execute account transaction', output2);
