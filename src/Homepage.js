@@ -61,7 +61,7 @@ function Homepage() {
             <p className="text-2xl font-bold mt-4"> {onchainid} </p>
           </div>
         </div>
-        <a href="/finances">
+        <a href={`/finances/${userId}`}>
           <button className="flex  flex-row w-[80%] p-4 mt-5 bg-filler border-4 border-4 border-black shadow-solid">
             <p className="text-2xl text-bgwhite font-bold">
               Manage your onchain Finances →

@@ -47,7 +47,7 @@ const Listbox = () => {
                 }
             </div>
             <div className='flex flex-col justify-between items-center bg-filler w-full'>
-                <button className='text-xl text-bgwhite p-2 font-bold'>Add Address </button>
+                <a href={`/addaddress/${userId}`} ><button className='text-xl text-bgwhite p-2 font-bold'>Add Address </button></a>
             </div>
         </div>
      );
