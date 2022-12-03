@@ -73,6 +73,19 @@ function Lending() {
         <div class="slider-area slider-height" data-background="assets/img/hero/h1_hero.jpg">
             <div class="slider-active">
                
+                <div class="single-slider">
+                    <div class="slider-cap-wrapper">
+                        <div class="hero__caption">
+                            <p data-animation="fadeInLeft" data-delay=".2s">Achieve your financial goal</p>
+                            <h1 data-animation="fadeInLeft" data-delay=".5s">Small Business Loans For Daily Expenses.</h1>
+                           
+                            <a href="#" class="btn hero-btn" data-animation="fadeInLeft" data-delay=".8s">Apply for Loan</a>
+                        </div>
+                        <div class="hero__img">
+                            <img src="assets/img/hero/hero_img.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
                
                 <div class="single-slider">
                     <div class="slider-cap-wrapper">
