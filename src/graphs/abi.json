@@ -1,0 +1,149 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_profileid",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_chain",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_amount",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_sender",
+				"type": "string"
+			}
+		],
+		"name": "createReqs",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "profileid",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "chain",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "amount",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "sender",
+				"type": "string"
+			}
+		],
+		"name": "reqemitter",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "getid",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "getReqs",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "profileid",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "chain",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "amount",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "sender",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Requests.reqdata",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "reqdatas",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "profileid",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "chain",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "amount",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "sender",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

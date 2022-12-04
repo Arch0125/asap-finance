@@ -1,4 +1,6 @@
 import React from 'react';
+import { ethers } from "ethers";
+import * as PushAPI from "@pushprotocol/restapi";
 import { Sdk, NetworkNames } from 'etherspot';
 import { useState } from 'react';
 window.Buffer = window.Buffer || require("buffer").Buffer; 
@@ -17,10 +19,41 @@ const Scwmobile = () => {
     networkName: 'matic'
     });
 
+    const sendNotification = async() => {
+        try {
+          const PK = '2aab26bdb55aaf9c15cb1c0373b873608b5c008a3696d5bec39800e18332cedf'; // channel private key
+          const Pkey = `0x${PK}`;
+          const signer2 = new ethers.Wallet(Pkey);
+          const apiResponse = await PushAPI.payloads.sendNotification({
+            signer: signer2,
+            type: 3, // target
+            identityType: 2, // direct payload
+            notification: {
+              title: `SCW Created`,
+              body: `SCW Created`
+            },
+            payload: {
+              title: `SCW Created`,
+              body: `SCW Created`,
+              cta: '',
+              img: ''
+            },
+            recipients: 'eip155:5:0xC5Db59D48700B6bC8D53cE773b21931d986DEa0E', // recipient address
+            channel: 'eip155:5 :0xC5Db59D48700B6bC8D53cE773b21931d986DEa0E', // your channel address
+            env: 'staging'
+          });
+          
+          // apiResponse?.status === 204, if sent successfully!
+          console.log('API repsonse: ', apiResponse);
+        } catch (err) {
+          console.error('Error: ', err);
+        }
+      }
+
     const createScwallet = async () => {
         const output = await sdk.computeContractAccount();
         setAddr(output.address);
-       
+        sendNotification();
         console.log('contract account', output);
     }
     

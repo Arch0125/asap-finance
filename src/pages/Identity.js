@@ -110,7 +110,7 @@ function Identity() {
             }
               
               <WorldIDWidget
-                actionId="wid_BPZsRJANxct2cZxVRyh80SFG" // obtain this from developer.worldcoin.org
+                actionId="wid_staging_5b0d33bf9782b43712bdf1690cf79bef" // obtain this from developer.worldcoin.org
                 signal="my_signal"
                 enableTelemetry
                 onSuccess={(verificationResponse) =>

@@ -32,22 +32,7 @@ function App() {
         <div className='flex flex-col w-[30%] h-full justify-center items-center'>
           <p className='text-6xl font-extrabold text-textcolor' >AS<span className='text-filler' >AP</span></p>
           <p className='text-2xl font-extrabold text-textcolor mb-5' ><span className='text-filler' >As simple</span> as possible</p>
-          <div className='flex flex-col w-[90%] h-fit border-2 border-black shadow-solid-s p-2 m-3' >
-            <p className='text-md font-bold' >Gas Staking</p>
-            <p className='text-md' >Earn returns on your gas fees while you enjoy gasless txs</p>
-          </div>
-          <div className='flex flex-col w-[90%] h-fit border-2 border-black shadow-solid-s p-2 m-3' >
-            <p className='text-md font-bold' >Instant Swaps</p>
-            <p className='text-md'>Got different tokens? Swap it here without any hassle</p>
-          </div>
-          <div className='flex flex-col w-[90%] h-fit border-2 border-black shadow-solid-s p-2 m-3' >
-            <p className='text-md font-bold' >Custom Channels</p>
-            <p className='text-md'>Get paid often? Subscriptions at your ease</p>
-          </div>
-          <div className='flex flex-col w-[90%] h-fit border-2 border-black shadow-solid-s p-2 m-3' >
-            <p className='text-md font-bold' >Gas Refill</p>
-            <p className='text-md'>Get tokens to pay for your gas in exchange</p>
-          </div>
+         
 
         </div>
       </div>

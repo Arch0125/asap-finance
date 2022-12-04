@@ -39,6 +39,7 @@ const Ens = () => {
 
         const alchemy = new Alchemy(config);
         for(let i=0;i<polygonaddress.length;i++){
+            try{
             console.log(polygonaddress[i]);
             const walletAddress = polygonaddress[i];
             const ensContractAddress = "0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85";
@@ -46,7 +47,11 @@ const Ens = () => {
             contractAddresses: [ensContractAddress],
             });
             console.log(nfts.ownedNfts[0].title);
-            setens((ens) => [...ens, nfts.ownedNfts[0].title]);
+            setens((ens) => [...ens, nfts.ownedNfts[0].title]);}
+            catch{
+                console.log("error");
+                continue;
+            }
 
         }
     }
